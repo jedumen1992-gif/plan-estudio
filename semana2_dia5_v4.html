@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Semana 2 - Día 5 | Plan de Estudio de Cristopher Méndez PY</title>
+<style>
+  :root{
+    --bg:#f7f8fc; --card:#ffffff; --ink:#22504a; --muted:#6b7280; --primary:#4f46e5;
+    --primary-2:#6366f1; --ok:#16a34a; --bad:#dc2626; --warn:#f59e0b; --soft:#eef2ff; --border:#e5e7eb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#f3f5ff 0%, #f7f8fc 100%);color:var(--ink)}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px}
+  .hero{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border-radius:24px;padding:24px;box-shadow:0 12px 30px rgba(99,102,241,.25);margin-bottom:20px}
+  .hero h1{margin:0 0 8px;font-size:36px}
+  .hero p{margin:6px 0;font-size:18px;line-height:1.45}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:999px;font-size:15px}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:0 8px 24px rgba(15,23,42,.06);margin-bottom:18px}
+  .panel h2{margin:0 0 8px;font-size:26px}
+  .small{color:var(--muted);font-size:15px}
+  .progress-wrap{margin-top:14px}
+  .progress-bar{width:100%;height:18px;background:#e9ecfb;border-radius:999px;overflow:hidden}
+  .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#22c55e,#16a34a);transition:width .3s ease}
+  .progress-text{margin-top:8px;font-weight:bold;font-size:18px}
+  .toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+  button.primary, button.secondary{border:none;border-radius:14px;padding:14px 18px;font-size:18px;cursor:pointer;font-weight:bold}
+  button.primary{background:var(--primary);color:#fff}
+  button.primary:hover{background:var(--primary-2)}
+  button.secondary{background:#e5e7eb;color:#111827}
+  button.secondary:hover{background:#d1d5db}
+  .section-title{margin:26px 0 12px;font-size:28px}
+  .question{border:1px solid var(--border);border-radius:18px;padding:18px;margin:14px 0;background:#fff}
+  .question.done{border-color:#bbf7d0;background:#f0fdf4}
+  .q-top{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+  .badge{display:inline-block;padding:6px 12px;border-radius:999px;font-size:14px;font-weight:bold;color:#fff}
+  .b-logic{background:#0ea5e9}.b-math{background:#8b5cf6}.b-eng{background:#f97316}
+  .status{padding:6px 12px;border-radius:999px;font-size:14px;font-weight:bold;background:#f3f4f6;color:#374151}
+  .status.ok{background:#dcfce7;color:#166534}.status.pending{background:#fef3c7;color:#92400e}
+  .q-title{font-size:22px;font-weight:bold;margin:12px 0 8px}
+  .q-sub{font-size:17px;color:var(--muted);line-height:1.45}
+  .options{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px}
+  .option{width:100%;text-align:left;border:2px solid #dbe3ff;background:#f8faff;border-radius:16px;padding:16px;font-size:19px;cursor:pointer;transition:.2s}
+  .option:hover{transform:translateY(-1px);border-color:#a5b4fc}
+  .option.selected{border-color:var(--primary);background:#eef2ff;box-shadow:0 0 0 3px rgba(99,102,241,.08)}
+  .option.correct{border-color:#22c55e;background:#f0fdf4}
+  .option.wrong{border-color:#ef4444;background:#fef2f2}
+  .feedback{margin-top:14px;border-radius:14px;padding:14px;font-size:17px;line-height:1.45;display:none}
+  .feedback.show{display:block}
+  .feedback.ok{background:#ecfdf5;color:#166534;border:1px solid #bbf7d0}
+  .feedback.bad{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+  .feedback.tip{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa}
+  .summary{display:none}
+  .summary.show{display:block}
+  .summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+  .stat{background:#f8faff;border:1px solid var(--border);border-radius:16px;padding:16px;text-align:center}
+  .stat strong{display:block;font-size:30px;margin-top:6px}
+  .list{margin-top:14px;padding-left:18px;line-height:1.7;font-size:18px}
+  .footer-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  @media (max-width:900px){
+    .hero h1{font-size:28px}
+    .summary-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){
+    .wrap{padding:14px}
+    .panel,.hero{padding:16px}
+    .summary-grid{grid-template-columns:1fr}
+    .option{font-size:17px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <h1>PLAN DE ESTUDIO DE CRISTOPHER MÉNDEZ PY</h1>
+    <p><strong>Semana 2 – Día 5</strong></p>
+    <p><strong>Meta de hoy:</strong> resolver una práctica más larga, pensada para durar aproximadamente <strong>30 a 40 minutos</strong>, con corrección solo al final y reintentos hasta llegar al <strong>100%</strong>.</p>
+    <div class="chips">
+      <span class="chip">10 ejercicios de Lógica</span>
+      <span class="chip">10 ejercicios de Matemática</span>
+      <span class="chip">6 ejercicios de Inglés</span>
+      <span class="chip">26 ejercicios en total</span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Cómo se trabaja este día</h2>
+    <p class="small">
+      Primero resolvé <strong>todo en tu cuaderno</strong>. Después marcá tus respuestas en la pantalla.
+      Recién al terminar apretá <strong>“Corregir todo”</strong>. Si hay errores, el sistema te va a mostrar cuáles están mal y te dará una pista para volver a intentarlo.
+    </p>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-text" id="progressText">0 de 26 ejercicios correctos</div>
+    </div>
+    <div class="toolbar">
+      <button class="primary" id="btnCheckAll">Corregir todo</button>
+      <button class="secondary" id="btnReset">Reiniciar día</button>
+      <span class="small">Objetivo final: 26/26 correctos.</span>
+    </div>
+  </section>
+
+  <div id="questionsContainer"></div>
+
+  <section class="panel summary" id="summaryPanel">
+    <h2>¡Misión completada! 🌟</h2>
+    <p class="small">Terminaste la <strong>Semana 2 – Día 5</strong> con todos los ejercicios correctos.</p>
+    <div class="summary-grid">
+      <div class="stat"><span>Correctos</span><strong id="sumDone">26/26</strong></div>
+      <div class="stat"><span>Rondas de corrección</span><strong id="sumChecks">0</strong></div>
+      <div class="stat"><span>Bloque más fuerte</span><strong id="sumBest">-</strong></div>
+      <div class="stat"><span>Estado final</span><strong>100%</strong></div>
+    </div>
+    <h3 style="margin-top:18px;">Resumen por bloque</h3>
+    <ul class="list" id="blockSummary"></ul>
+    <div class="footer-actions">
+      <button class="primary" onclick="window.print()">Imprimir / Guardar en PDF</button>
+    </div>
+  </section>
+</div>
+
+<script>
+const STORAGE_KEY = "plan_estudio_cm_sem2_dia5_v4";
+
+const questions = [
+  // LÓGICA 1-10
+  {id:1, block:"Lógica", badge:"b-logic", title:"Secuencia 1", text:"Continúa la secuencia: 9 - 18 - 27 - 36 - __ - __", options:["18 y 20","45 y 54","24 y 28"], correct:1, tip:"La secuencia aumenta siempre de 9 en 9."},
+  {id:2, block:"Lógica", badge:"b-logic", title:"Secuencia 2", text:"Continúa la secuencia: 2 - 5 - 9 - 14 - 20 - __ - __", options:["20 y 25","27 y 35","18 y 22"], correct:1, tip:"Se van sumando números consecutivos: +2, +3, +4, +5..."},
+  {id:3, block:"Lógica", badge:"b-logic", title:"Letras", text:"¿Qué letras siguen? B - D - F - H - __ - __", options:["J - L","I - K","J - K"], correct:0, tip:"Las letras avanzan saltando una letra cada vez."},
+  {id:4, block:"Lógica", badge:"b-logic", title:"Problema de días", text:"Un caracol sube 3 metros cada día. ¿Cuántos metros subirá en 7 días?", options:["18","21","24"], correct:1, tip:"Multiplicá lo que sube en un día por la cantidad de días."},
+  {id:5, block:"Lógica", badge:"b-logic", title:"Calendario", text:"Si hoy es lunes, ¿qué día será dentro de 10 días?", options:["miércoles","jueves","viernes"], correct:1, tip:"Contá 7 días para volver al mismo día y después sumá los días que faltan."},
+  {id:6, block:"Lógica", badge:"b-logic", title:"Intruso", text:"¿Cuál no pertenece al grupo? Manzana - Pera - Banana - Silla", options:["Manzana","Banana","Silla"], correct:2, tip:"Tres palabras pertenecen a la misma categoría."},
+  {id:7, block:"Lógica", badge:"b-logic", title:"Cuenta regresiva", text:"Completa: 50 - 45 - 40 - 35 - __ - __", options:["30 y 25","25 y 20","32 y 29"], correct:0, tip:"La secuencia baja siempre de la misma cantidad."},
+  {id:8, block:"Lógica", badge:"b-logic", title:"Cajas y pelotas", text:"Tengo 5 cajas. Cada caja contiene 4 pelotas. ¿Cuántas pelotas hay en total?", options:["18","20","24"], correct:1, tip:"Son grupos iguales: cantidad de cajas × pelotas por caja."},
+  {id:9, block:"Lógica", badge:"b-logic", title:"Ordenar", text:"¿Cuál opción ordena de mayor a menor estos números: 12 - 35 - 7 - 28?", options:["35 - 28 - 12 - 7","28 - 35 - 12 - 7","35 - 12 - 28 - 7"], correct:0, tip:"De mayor a menor: del más grande al más pequeño."},
+  {id:10, block:"Lógica", badge:"b-logic", title:"Autobús", text:"Un autobús lleva 15 pasajeros. Suben 10. Bajan 6. ¿Cuántos quedan?", options:["19","21","25"], correct:0, tip:"Primero sumá los que suben y después restá los que bajan."},
+
+  // MATEMÁTICA 11-20
+  {id:11, block:"Matemática", badge:"b-math", title:"Multiplicación", text:"64 × 7 =", options:["494","448","514"], correct:1, tip:"Podés hacer 56 × 10 y restar 56."},
+  {id:12, block:"Matemática", badge:"b-math", title:"División", text:"108 ÷ 9 =", options:["11","12","13"], correct:1, tip:"Pensá: 7 por cuánto da 84."},
+  {id:13, block:"Matemática", badge:"b-math", title:"Multiplicación", text:"27 × 4 =", options:["108","98","118"], correct:0, tip:"27 + 27 + 27 + 27."},
+  {id:14, block:"Matemática", badge:"b-math", title:"División", text:"144 ÷ 6 =", options:["22","24","26"], correct:1, tip:"Buscá qué número multiplicado por 6 da 144."},
+  {id:15, block:"Matemática", badge:"b-math", title:"Suma", text:"368 + 457 =", options:["593","825","613"], correct:1, tip:"Sumá centenas, decenas y unidades con cuidado."},
+  {id:16, block:"Matemática", badge:"b-math", title:"Resta", text:"1000 - 367 =", options:["633","643","623"], correct:0, tip:"Podés restar 300, luego 60 y luego 7."},
+  {id:17, block:"Matemática", badge:"b-math", title:"Problema 1", text:"Hay 24 aulas con 18 alumnos cada una. ¿Cuántos alumnos hay en total?", options:["432","442","452"], correct:0, tip:"Multiplicá cantidad de aulas por alumnos en cada aula."},
+  {id:18, block:"Matemática", badge:"b-math", title:"Problema 2", text:"540 caramelos se reparten entre 18 niños. ¿Cuántos recibe cada uno?", options:["25","30","35"], correct:1, tip:"Es una división: 360 ÷ 12."},
+  {id:19, block:"Matemática", badge:"b-math", title:"Problema 3", text:"Un paquete cuesta Gs. 17.500. ¿Cuánto cuestan 5 paquetes?", options:["Gs. 87.500","Gs. 85.000","Gs. 92.500"], correct:0, tip:"Multiplicá 17.500 × 5."},
+  {id:20, block:"Matemática", badge:"b-math", title:"Problema 4", text:"Un agricultor cosecha 450 verdes y vende 175. ¿Cuántas le quedan?", options:["265","275","285"], correct:1, tip:"Restá las que vendió del total que tenía."},
+
+  // INGLÉS 21-26
+  {id:21, block:"Inglés", badge:"b-eng", title:"Color", text:"¿Qué significa “green”?", options:["rosado","naranja","naranja"], correct:1, tip:"Es un color entre azul y rojo."},
+  {id:22, block:"Inglés", badge:"b-eng", title:"Número", text:"¿Qué número es “sixty”?", options:["13","30","40"], correct:1, tip:"No es teen, es un número de decena."},
+  {id:23, block:"Inglés", badge:"b-eng", title:"Animal", text:"¿Qué significa “horse”?", options:["caballo","oveja","perro"], correct:0, tip:"Es un animal grande que puede correr y llevar personas."},
+  {id:24, block:"Inglés", badge:"b-eng", title:"Lugar escolar", text:"¿Qué significa “classroom”?", options:["patio","clase / aula","biblioteca"], correct:1, tip:"Es el lugar donde están los alumnos con la maestra."},
+  {id:25, block:"Inglés", badge:"b-eng", title:"Frase", text:"¿Qué significa “Open your book”?", options:["Cerrá tu libro","Abrí tu libro","Guardá tu libro"], correct:1, tip:"Open significa abrir."},
+  {id:26, block:"Inglés", badge:"b-eng", title:"Comprensión", text:"Si la maestra dice “Stand up”, ¿qué tenés que hacer?", options:["Sentarte","Pararte","Correr"], correct:1, tip:"Es una instrucción de clase para ponerse de pie."}
+];
+
+function defaultState(){
+  const answers = {};
+  questions.forEach(q => answers[q.id] = {selected:null, correct:false, lastWrong:false});
+  return {answers, checks:0};
+}
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return defaultState();
+    const parsed = JSON.parse(raw);
+    if(!parsed.answers) return defaultState();
+    return parsed;
+  }catch(e){ return defaultState(); }
+}
+let state = loadState();
+
+function saveState(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+function resetProgress(){
+  if(confirm("¿Querés reiniciar el progreso de este día?")){
+    localStorage.removeItem(STORAGE_KEY);
+    state = defaultState();
+    render();
+    window.scrollTo({top:0, behavior:"smooth"});
+  }
+}
+
+function feedbackText(q, s){
+  if(state.checks === 0){
+    return 'Elegí una opción en cada ejercicio y al final apretá <strong>Corregir todo</strong>.';
+  }
+  if(s.correct) return '✅ <strong>Correcto.</strong>';
+  if(s.selected === null) return '⚠️ <strong>Sin responder.</strong> Tenés que marcar una opción antes de volver a corregir.';
+  if(s.lastWrong) return `❌ <strong>Incorrecto.</strong> Pista: ${q.tip}`;
+  return 'Pendiente.';
+}
+
+function render(){
+  const container = document.getElementById("questionsContainer");
+  container.innerHTML = "";
+
+  const groups = [
+    {name:"Lógica", from:1, to:10},
+    {name:"Matemática", from:11, to:20},
+    {name:"Inglés", from:21, to:26}
+  ];
+
+  groups.forEach(group => {
+    const title = document.createElement("h2");
+    title.className = "section-title";
+    title.textContent = `MISIÓN – ${group.name.toUpperCase()}`;
+    container.appendChild(title);
+
+    questions.filter(q => q.id >= group.from && q.id <= group.to).forEach(q => {
+      const s = state.answers[q.id];
+      const statusClass = s.correct ? "ok" : "pending";
+      const statusText = s.correct ? "Correcto" : "Sin corregir / pendiente";
+
+      const card = document.createElement("section");
+      card.className = "question panel" + (s.correct ? " done" : "");
+      card.innerHTML = `
+        <div class="q-top">
+          <div>
+            <span class="badge ${q.badge}">${q.block}</span>
+            <span class="small" style="margin-left:10px;font-weight:bold;">Ejercicio ${q.id}</span>
+          </div>
+          <div class="status ${statusClass}">${statusText}</div>
+        </div>
+        <div class="q-title">${q.title}</div>
+        <div class="q-sub">${q.text}</div>
+        <div class="options">
+          ${q.options.map((opt, idx) => {
+            let cls = "option";
+            if(s.selected === idx) cls += " selected";
+            if(state.checks > 0){
+              if(s.correct && idx === q.correct) cls += " correct";
+              if(s.lastWrong && s.selected === idx && idx !== q.correct) cls += " wrong";
+            }
+            return `<button class="${cls}" data-q="${q.id}" data-idx="${idx}">${String.fromCharCode(65+idx)}) ${opt}</button>`;
+          }).join("")}
+        </div>
+        <div class="feedback ${state.checks > 0 ? "show" : ""} ${s.correct ? "ok" : (s.lastWrong ? "bad" : "tip")}">${feedbackText(q,s)}</div>
+      `;
+      container.appendChild(card);
+    });
+  });
+
+  document.querySelectorAll(".option").forEach(btn => {
+    btn.onclick = () => {
+      const qId = Number(btn.dataset.q), idx = Number(btn.dataset.idx);
+      state.answers[qId].selected = idx;
+      state.answers[qId].lastWrong = false;
+      saveState();
+      render();
+    };
+  });
+
+  updateProgress();
+}
+
+function checkAll(){
+  state.checks += 1;
+  questions.forEach(q => {
+    const s = state.answers[q.id];
+    if(s.selected === q.correct){
+      s.correct = true;
+      s.lastWrong = false;
+    }else{
+      s.correct = false;
+      s.lastWrong = true;
+    }
+  });
+  saveState();
+  render();
+
+  const correctCount = questions.filter(q => state.answers[q.id].correct).length;
+  if(correctCount < questions.length){
+    alert(`Resultado de esta ronda: ${correctCount}/${questions.length} correctos.\nRevisá los marcados en rojo, corregí en el cuaderno y volvé a apretar "Corregir todo".`);
+  }
+}
+
+function updateProgress(){
+  const done = questions.filter(q => state.answers[q.id].correct).length;
+  const total = questions.length;
+  const pct = Math.round((done/total)*100);
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("progressText").textContent = `${done} de ${total} ejercicios correctos`;
+
+  const summary = document.getElementById("summaryPanel");
+  if(done === total && state.checks > 0){
+    fillSummary();
+    summary.classList.add("show");
+  } else {
+    summary.classList.remove("show");
+  }
+}
+
+function fillSummary(){
+  document.getElementById("sumChecks").textContent = state.checks;
+  document.getElementById("sumDone").textContent = `${questions.length}/${questions.length}`;
+
+  const blocks = ["Lógica","Matemática","Inglés"];
+  const results = {};
+  blocks.forEach(b => {
+    const qs = questions.filter(q => q.block === b);
+    const correct = qs.filter(q => state.answers[q.id].correct).length;
+    results[b] = {correct, total:qs.length};
+  });
+
+  let best = blocks[0];
+  blocks.forEach(b => { if(results[b].correct > results[best].correct) best = b; });
+  document.getElementById("sumBest").textContent = best;
+
+  document.getElementById("blockSummary").innerHTML = blocks.map(b =>
+    `<li><strong>${b}:</strong> ${results[b].correct}/${results[b].total} correctos</li>`
+  ).join("");
+}
+
+document.getElementById("btnCheckAll").onclick = checkAll;
+document.getElementById("btnReset").onclick = resetProgress;
+render();
+</script>
+</body>
+</html>
