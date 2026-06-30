@@ -125,37 +125,36 @@ const STORAGE_KEY = "plan_estudio_cm_sem2_dia5_v4";
 
 const questions = [
   // LÓGICA 1-10
-  {id:1, block:"Lógica", badge:"b-logic", title:"Secuencia 1", text:"Continúa la secuencia: 9 - 18 - 27 - 36 - __ - __", options:["18 y 20","45 y 54","24 y 28"], correct:1, tip:"La secuencia aumenta siempre de 9 en 9."},
-  {id:2, block:"Lógica", badge:"b-logic", title:"Secuencia 2", text:"Continúa la secuencia: 2 - 5 - 9 - 14 - 20 - __ - __", options:["20 y 25","27 y 35","18 y 22"], correct:1, tip:"Se van sumando números consecutivos: +2, +3, +4, +5..."},
-  {id:3, block:"Lógica", badge:"b-logic", title:"Letras", text:"¿Qué letras siguen? B - D - F - H - __ - __", options:["J - L","I - K","J - K"], correct:0, tip:"Las letras avanzan saltando una letra cada vez."},
-  {id:4, block:"Lógica", badge:"b-logic", title:"Problema de días", text:"Un caracol sube 3 metros cada día. ¿Cuántos metros subirá en 7 días?", options:["18","21","24"], correct:1, tip:"Multiplicá lo que sube en un día por la cantidad de días."},
-  {id:5, block:"Lógica", badge:"b-logic", title:"Calendario", text:"Si hoy es lunes, ¿qué día será dentro de 10 días?", options:["miércoles","jueves","viernes"], correct:1, tip:"Contá 7 días para volver al mismo día y después sumá los días que faltan."},
-  {id:6, block:"Lógica", badge:"b-logic", title:"Intruso", text:"¿Cuál no pertenece al grupo? Manzana - Pera - Banana - Silla", options:["Manzana","Banana","Silla"], correct:2, tip:"Tres palabras pertenecen a la misma categoría."},
-  {id:7, block:"Lógica", badge:"b-logic", title:"Cuenta regresiva", text:"Completa: 50 - 45 - 40 - 35 - __ - __", options:["30 y 25","25 y 20","32 y 29"], correct:0, tip:"La secuencia baja siempre de la misma cantidad."},
-  {id:8, block:"Lógica", badge:"b-logic", title:"Cajas y pelotas", text:"Tengo 5 cajas. Cada caja contiene 4 pelotas. ¿Cuántas pelotas hay en total?", options:["18","20","24"], correct:1, tip:"Son grupos iguales: cantidad de cajas × pelotas por caja."},
-  {id:9, block:"Lógica", badge:"b-logic", title:"Ordenar", text:"¿Cuál opción ordena de mayor a menor estos números: 12 - 35 - 7 - 28?", options:["35 - 28 - 12 - 7","28 - 35 - 12 - 7","35 - 12 - 28 - 7"], correct:0, tip:"De mayor a menor: del más grande al más pequeño."},
-  {id:10, block:"Lógica", badge:"b-logic", title:"Autobús", text:"Un autobús lleva 15 pasajeros. Suben 10. Bajan 6. ¿Cuántos quedan?", options:["19","21","25"], correct:0, tip:"Primero sumá los que suben y después restá los que bajan."},
+{id:1, block:"Lógica", badge:"b-logic", title:"Patrón numérico", text:"Completa la secuencia: 5 - 10 - 20 - 40 - __ - __", options:["60 y 80","80 y 160","45 y 90"], correct:1, tip:"Cada número es el doble del anterior."},
+{id:2, block:"Lógica", badge:"b-logic", title:"Serie alternada", text:"¿Qué número sigue? 2 - 5 - 4 - 7 - 6 - 9 - __", options:["8","10","11"], correct:0, tip:"La secuencia alterna dos series distintas."},
+{id:3, block:"Lógica", badge:"b-logic", title:"Letras", text:"Completa: A - D - G - J - __ - __", options:["M - P","L - O","N - Q"], correct:0, tip:"Cada letra avanza tres posiciones."},
+{id:4, block:"Lógica", badge:"b-logic", title:"Razonamiento", text:"Tres hermanos tienen 8, 10 y 12 años. ¿Cuál es la diferencia entre el mayor y el menor?", options:["2","3","4"], correct:2, tip:"Restá la edad menor de la mayor."},
+{id:5, block:"Lógica", badge:"b-logic", title:"Calendario", text:"Si hoy es jueves, ¿qué día será dentro de 15 días?", options:["Viernes","Sábado","Domingo"], correct:0, tip:"Cada 7 días vuelve al mismo día."},
+{id:6, block:"Lógica", badge:"b-logic", title:"Intruso", text:"¿Cuál no pertenece al grupo?", options:["Heladera","Mesa","Silla"], correct:0, tip:"Dos pertenecen al mismo ambiente y uno es un electrodoméstico."},
+{id:7, block:"Lógica", badge:"b-logic", title:"Cuenta regresiva", text:"120 - 110 - 100 - 90 - __ - __", options:["80 y 70","75 y 65","85 y 75"], correct:0, tip:"Siempre disminuye la misma cantidad."},
+{id:8, block:"Lógica", badge:"b-logic", title:"Problema", text:"Hay 9 cajas con 6 pelotas en cada una. ¿Cuántas pelotas hay?", options:["48","54","60"], correct:1, tip:"Multiplicá la cantidad de cajas por las pelotas de cada caja."},
+{id:9, block:"Lógica", badge:"b-logic", title:"Orden", text:"Ordená de menor a mayor: 42 - 18 - 57 - 31", options:["18 - 31 - 42 - 57","18 - 42 - 31 - 57","31 - 18 - 42 - 57"], correct:0, tip:"Buscá el número más pequeño primero."},
+{id:10, block:"Lógica", badge:"b-logic", title:"Problema", text:"Un colectivo lleva 24 pasajeros. Suben 13 y bajan 9. ¿Cuántos quedan?", options:["26","28","30"], correct:1, tip:"Primero sumá y después restá."},
 
   // MATEMÁTICA 11-20
-  {id:11, block:"Matemática", badge:"b-math", title:"Multiplicación", text:"64 × 7 =", options:["494","448","514"], correct:1, tip:"Podés hacer 56 × 10 y restar 56."},
-  {id:12, block:"Matemática", badge:"b-math", title:"División", text:"108 ÷ 9 =", options:["11","12","13"], correct:1, tip:"Pensá: 7 por cuánto da 84."},
-  {id:13, block:"Matemática", badge:"b-math", title:"Multiplicación", text:"27 × 4 =", options:["108","98","118"], correct:0, tip:"27 + 27 + 27 + 27."},
-  {id:14, block:"Matemática", badge:"b-math", title:"División", text:"144 ÷ 6 =", options:["22","24","26"], correct:1, tip:"Buscá qué número multiplicado por 6 da 144."},
-  {id:15, block:"Matemática", badge:"b-math", title:"Suma", text:"368 + 457 =", options:["593","825","613"], correct:1, tip:"Sumá centenas, decenas y unidades con cuidado."},
-  {id:16, block:"Matemática", badge:"b-math", title:"Resta", text:"1000 - 367 =", options:["633","643","623"], correct:0, tip:"Podés restar 300, luego 60 y luego 7."},
-  {id:17, block:"Matemática", badge:"b-math", title:"Problema 1", text:"Hay 24 aulas con 18 alumnos cada una. ¿Cuántos alumnos hay en total?", options:["432","442","452"], correct:0, tip:"Multiplicá cantidad de aulas por alumnos en cada aula."},
-  {id:18, block:"Matemática", badge:"b-math", title:"Problema 2", text:"540 caramelos se reparten entre 18 niños. ¿Cuántos recibe cada uno?", options:["25","30","35"], correct:1, tip:"Es una división: 360 ÷ 12."},
-  {id:19, block:"Matemática", badge:"b-math", title:"Problema 3", text:"Un paquete cuesta Gs. 17.500. ¿Cuánto cuestan 5 paquetes?", options:["Gs. 87.500","Gs. 85.000","Gs. 92.500"], correct:0, tip:"Multiplicá 17.500 × 5."},
-  {id:20, block:"Matemática", badge:"b-math", title:"Problema 4", text:"Un agricultor cosecha 450 verdes y vende 175. ¿Cuántas le quedan?", options:["265","275","285"], correct:1, tip:"Restá las que vendió del total que tenía."},
-
-  // INGLÉS 21-26
-  {id:21, block:"Inglés", badge:"b-eng", title:"Color", text:"¿Qué significa “green”?", options:["rosado","naranja","naranja"], correct:1, tip:"Es un color entre azul y rojo."},
-  {id:22, block:"Inglés", badge:"b-eng", title:"Número", text:"¿Qué número es “sixty”?", options:["13","30","40"], correct:1, tip:"No es teen, es un número de decena."},
-  {id:23, block:"Inglés", badge:"b-eng", title:"Animal", text:"¿Qué significa “horse”?", options:["caballo","oveja","perro"], correct:0, tip:"Es un animal grande que puede correr y llevar personas."},
-  {id:24, block:"Inglés", badge:"b-eng", title:"Lugar escolar", text:"¿Qué significa “classroom”?", options:["patio","clase / aula","biblioteca"], correct:1, tip:"Es el lugar donde están los alumnos con la maestra."},
-  {id:25, block:"Inglés", badge:"b-eng", title:"Frase", text:"¿Qué significa “Open your book”?", options:["Cerrá tu libro","Abrí tu libro","Guardá tu libro"], correct:1, tip:"Open significa abrir."},
-  {id:26, block:"Inglés", badge:"b-eng", title:"Comprensión", text:"Si la maestra dice “Stand up”, ¿qué tenés que hacer?", options:["Sentarte","Pararte","Correr"], correct:1, tip:"Es una instrucción de clase para ponerse de pie."}
-];
+{id:11, block:"Matemática", badge:"b-math", title:"Multiplicación", text:"36 × 8 =", options:["288","296","278"], correct:0, tip:"Podés hacer 30×8 y luego 6×8."},
+{id:12, block:"Matemática", badge:"b-math", title:"División", text:"126 ÷ 9 =", options:["12","14","16"], correct:1, tip:"Pensá qué número multiplicado por 9 da 126."},
+{id:13, block:"Matemática", badge:"b-math", title:"Suma", text:"458 + 376 =", options:["824","834","844"], correct:1, tip:"Sumá primero centenas, luego decenas y finalmente unidades."},
+{id:14, block:"Matemática", badge:"b-math", title:"Resta", text:"950 − 487 =", options:["463","473","453"], correct:0, tip:"Podés restar por partes: 950−400, luego −80 y finalmente −7."},
+{id:15, block:"Matemática", badge:"b-math", title:"Multiplicación", text:"54 × 7 =", options:["368","378","388"], correct:1, tip:"50×7 + 4×7."},
+{id:16, block:"Matemática", badge:"b-math", title:"División", text:"168 ÷ 8 =", options:["20","21","22"], correct:1, tip:"Buscá qué número multiplicado por 8 da 168."},
+{id:17, block:"Matemática", badge:"b-math", title:"Problema 1", text:"Una biblioteca tiene 18 estantes con 24 libros en cada uno. ¿Cuántos libros hay en total?", options:["432","442","452"], correct:0, tip:"Multiplicá la cantidad de estantes por los libros de cada estante."},
+{id:18, block:"Matemática", badge:"b-math", title:"Problema 2", text:"Un agricultor cosechó 672 naranjas y las colocó en 12 cajones iguales. ¿Cuántas naranjas hay en cada cajón?", options:["54","56","58"], correct:1, tip:"Es una división exacta."},
+{id:19, block:"Matemática", badge:"b-math", title:"Problema 3", text:"Cada entrada cuesta Gs. 28.000. Si una familia compra 4 entradas, ¿cuánto paga en total?", options:["Gs. 112.000","Gs. 108.000","Gs. 120.000"], correct:0, tip:"Multiplicá el precio de una entrada por la cantidad comprada."},
+{id:20, block:"Matemática", badge:"b-math", title:"Problema 4", text:"Una fábrica produjo 950 botellas y vendió 385. ¿Cuántas botellas quedaron?", options:["555","565","575"], correct:1, tip:"Restá las botellas vendidas del total producido."},
+ 
+// INGLÉS 21-26
+{id:21, block:"Inglés", badge:"b-eng", title:"Color", text:"¿Qué significa “yellow”?", options:["Amarillo","Azul","Verde"], correct:0, tip:"Es el color del sol y de muchas flores."},
+{id:22, block:"Inglés", badge:"b-eng", title:"Número", text:"¿Qué número es “seventy”?", options:["17","70","60"], correct:1, tip:"Es un número de decena mayor que sixty."},
+{id:23, block:"Inglés", badge:"b-eng", title:"Objeto escolar", text:"¿Qué significa “eraser”?", options:["Regla","Goma de borrar","Lápiz"], correct:1, tip:"Se utiliza para borrar lo escrito con lápiz."},
+{id:24, block:"Inglés", badge:"b-eng", title:"Parte del cuerpo", text:"¿Qué significa “shoulder”?", options:["Rodilla","Hombro","Codo"], correct:1, tip:"Es la parte del cuerpo que une el brazo con el tronco."},
+{id:25, block:"Inglés", badge:"b-eng", title:"Instrucción", text:"¿Qué significa “Close the door”?", options:["Abrí la puerta","Cerrá la puerta","Golpeá la puerta"], correct:1, tip:"Close significa cerrar."},
+{id:26, block:"Inglés", badge:"b-eng", title:"Comprensión", text:"Si la maestra dice “Listen carefully”, ¿qué tenés que hacer?", options:["Escuchar con atención","Escribir rápidamente","Salir del aula"], correct:0, tip:"Listen significa escuchar y carefully significa con atención."},
 
 function defaultState(){
   const answers = {};
