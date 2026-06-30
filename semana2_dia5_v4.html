@@ -140,13 +140,13 @@ const questions = [
 {id:11, block:"Matemática", badge:"b-math", title:"Multiplicación", text:"36 × 8 =", options:["288","296","278"], correct:0, tip:"Podés hacer 30×8 y luego 6×8."},
 {id:12, block:"Matemática", badge:"b-math", title:"División", text:"126 ÷ 9 =", options:["12","14","16"], correct:1, tip:"Pensá qué número multiplicado por 9 da 126."},
 {id:13, block:"Matemática", badge:"b-math", title:"Suma", text:"458 + 376 =", options:["824","834","844"], correct:1, tip:"Sumá primero centenas, luego decenas y finalmente unidades."},
-{id:14, block:"Matemática", badge:"b-math", title:"Resta", text:"950 − 487 =", options:["463","473","453"], correct:0, tip:"Podés restar por partes: 950−400, luego −80 y finalmente −7."},
+{id:14, block:"Matemática", badge:"b-math", title:"Resta", text:"950 − 487 =", options:["463","473","453"], correct:0, tip:"Podés restar por partes: 950−400, luego −80 y finalmente −7."}
 {id:15, block:"Matemática", badge:"b-math", title:"Multiplicación", text:"54 × 7 =", options:["368","378","388"], correct:1, tip:"50×7 + 4×7."},
 {id:16, block:"Matemática", badge:"b-math", title:"División", text:"168 ÷ 8 =", options:["20","21","22"], correct:1, tip:"Buscá qué número multiplicado por 8 da 168."},
 {id:17, block:"Matemática", badge:"b-math", title:"Problema 1", text:"Una biblioteca tiene 18 estantes con 24 libros en cada uno. ¿Cuántos libros hay en total?", options:["432","442","452"], correct:0, tip:"Multiplicá la cantidad de estantes por los libros de cada estante."},
 {id:18, block:"Matemática", badge:"b-math", title:"Problema 2", text:"Un agricultor cosechó 672 naranjas y las colocó en 12 cajones iguales. ¿Cuántas naranjas hay en cada cajón?", options:["54","56","58"], correct:1, tip:"Es una división exacta."},
 {id:19, block:"Matemática", badge:"b-math", title:"Problema 3", text:"Cada entrada cuesta Gs. 28.000. Si una familia compra 4 entradas, ¿cuánto paga en total?", options:["Gs. 112.000","Gs. 108.000","Gs. 120.000"], correct:0, tip:"Multiplicá el precio de una entrada por la cantidad comprada."},
-{id:20, block:"Matemática", badge:"b-math", title:"Problema 4", text:"Una fábrica produjo 950 botellas y vendió 385. ¿Cuántas botellas quedaron?", options:["555","565","575"], correct:1, tip:"Restá las botellas vendidas del total producido."},
+{id:20, block:"Matemática", badge:"b-math", title:"Problema 4", text:"Una fábrica produjo 950 botellas y vendió 385. ¿Cuántas botellas quedaron?", options:["555","565","575"], correct:1, tip:"Restá las botellas vendidas del total producido."}
  
 // INGLÉS 21-26
 {id:21, block:"Inglés", badge:"b-eng", title:"Color", text:"¿Qué significa “yellow”?", options:["Amarillo","Azul","Verde"], correct:0, tip:"Es el color del sol y de muchas flores."},
@@ -154,9 +154,9 @@ const questions = [
 {id:23, block:"Inglés", badge:"b-eng", title:"Objeto escolar", text:"¿Qué significa “eraser”?", options:["Regla","Goma de borrar","Lápiz"], correct:1, tip:"Se utiliza para borrar lo escrito con lápiz."},
 {id:24, block:"Inglés", badge:"b-eng", title:"Parte del cuerpo", text:"¿Qué significa “shoulder”?", options:["Rodilla","Hombro","Codo"], correct:1, tip:"Es la parte del cuerpo que une el brazo con el tronco."},
 {id:25, block:"Inglés", badge:"b-eng", title:"Instrucción", text:"¿Qué significa “Close the door”?", options:["Abrí la puerta","Cerrá la puerta","Golpeá la puerta"], correct:1, tip:"Close significa cerrar."},
-{id:26, block:"Inglés", badge:"b-eng", title:"Comprensión", text:"Si la maestra dice “Listen carefully”, ¿qué tenés que hacer?", options:["Escuchar con atención","Escribir rápidamente","Salir del aula"], correct:0, tip:"Listen significa escuchar y carefully significa con atención."},
+{id:26, block:"Inglés", badge:"b-eng", title:"Comprensión", text:"Si la maestra dice “Listen carefully”, ¿qué tenés que hacer?", options:["Escuchar con atención","Escribir rápidamente","Salir del aula"], correct:0, tip:"Listen significa escuchar y carefully significa con atención."}
 
-function defaultState(){
+];function defaultState(){
   const answers = {};
   questions.forEach(q => answers[q.id] = {selected:null, correct:false, lastWrong:false});
   return {answers, checks:0};
